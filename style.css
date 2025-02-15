@@ -1,0 +1,207 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    width: 100vw;
+    font-size: 16px;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }  
+
+  .container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  .left{
+    flex: 4;
+    background-color: #145da1;
+    padding: 10px;
+    color: white;
+    
+  }
+  .right{
+    flex: 6;
+    background-color: #2D336B;
+    padding: 60px 10px 10px 80px;
+    color: white;
+
+  }
+
+.heading{
+    font-size: 1.2rem ;
+}
+.signup-img{
+    
+    display: flex;
+    justify-content: center;
+
+}
+.signup-text{
+ display: flex;
+ justify-content: center;
+ font-size: 1.1rem;
+ font-weight: 500;
+}
+.get-started{
+    font-size: 1.5rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.form-container{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.form-row{
+    display: flex;
+    gap: 150px;
+    
+}
+
+
+
+ .form-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-col input {
+    background-color: #2D336B;
+    border-radius: 4px;
+    padding: 5px;
+    border: 2px solid transparent;
+    border-bottom: 2px solid rgb(0, 0, 0, 0.4);
+    transition: border 0.3s ease, padding-top 0.3s ease;
+}
+
+.form-col input:focus {
+    outline: none;
+    border: 2px solid rgb(6, 170, 94);
+    padding-top: 14px; /* Adjusts padding so text doesn't overlap the floating label */
+}
+
+/* Floating effect for span */
+.form-col span {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    pointer-events: none; /* Prevents blocking input clicks */
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* Move span up when input is focused or has a value */
+.form-col input:focus + span,
+.form-col input:not(:placeholder-shown) + span {
+    top: 5px;
+    left: 10px;
+    font-size: .8rem;
+    color: rgb(6, 170, 94);
+    background-color: rgb(6, 170, 94); /* Matches input background */
+    padding: 0 5px; /* Creates a small gap effect like a fieldset */
+    color: white;
+} 
+
+
+.form-col input:focus:invalid {
+    border: 2px solid hsl(0, 77%, 57%);
+}
+
+.form-col input:focus:invalid + span {
+    background-color: hsl(0, 77%, 57%);
+}
+
+
+.form-col input:focus:valid {
+    border: 2px solid rgb(6, 170, 94);
+}
+
+.createAc{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.createBtn{
+    padding: 10px 55px;
+    background-color: #145da1;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    font-size: 1.2rem;
+    width:max-content;
+}
+
+.createAc p {
+    color: #ccc;
+}
+.createAc p strong {
+    color: #145da1;
+    font-weight: 900;
+}
+
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide number input arrows for Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
